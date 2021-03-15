@@ -1,0 +1,729 @@
+@import 'fonts'
+@import 'inheritance'
+@import 'primary'
+@import '../node_modules/swiper/swiper-bundle.min.css'
+
+*
+  margin: 0
+  padding: 0
+
+body
+  background: $black-color
+  font-family: 'Gilroy-Regular'
+
+.header
+  display: flex
+  justify-content: space-between
+  height: $header-h
+  border-bottom: 1px solid $grey-color
+
+.logo
+  @extend %vertical-center
+  height: 30px
+  margin-left: 30px
+
+.nav
+  @extend %content-w
+  display: flex
+  justify-content: space-between
+
+  .topmenu
+    display: flex
+    position: relative
+    margin-right: 5px
+
+    li
+      padding: 0 15px
+      list-style-type: none
+
+      a
+        line-height: $header-h
+        text-decoration: none
+        color: white
+        white-space: nowrap
+
+    li.active, li:hover
+      border-bottom: 3px solid $orange-color
+
+      a
+        color: $orange-color
+
+    .submenu
+      display: block
+      max-height: 0
+      position: absolute
+      background: black
+      left: 0
+      top: 100%
+      z-index: 5
+      columns: 2
+      width: calc(100% - 40px)
+      opacity: 0
+      transform: scaleY(0)
+      transform-origin: 0 0
+      transition: all .5s ease-in-out
+      padding: 20px
+      text-align: start
+      border-bottom: 3px solid $orange-color
+
+
+      span
+        white-space: nowrap
+        color: #5f5f63
+        line-height: 50px
+        font-family: 'Gilroy-Bold'
+
+      li
+        padding: 0
+        border-bottom: 1px solid #212123
+        width: 100%
+
+        a
+          white-space: nowrap
+          color: white
+          text-align: left
+          padding: 12px 15px
+          font-size: 13px
+          border-bottom: 1px solid rgba(255,255,255,.1)
+          line-height: 25px
+          padding: 0
+
+    .submenu li:last-child a
+      border-bottom: none
+
+nav .topmenu > li:hover .submenu
+  opacity: 1
+  max-height: fit-content
+  transform: scaleY(1)
+
+.registration-form
+  display: flex
+  justify-content: center
+
+  .sign-in
+    color: white
+
+  .sign-in:hover
+    color: $orange-color
+
+  .registration
+    color: $orange-color
+    border: 1px solid $orange-color
+
+  .registration:hover
+    color: white
+    border: 1px solid white
+
+.registration-form > button
+    @extend %vertical-center
+    background: none
+    border: none
+    font-size: 16px
+    padding: 10px 20px
+    cursor: pointer
+
+.switch-lang
+  @extend %vertical-center
+  position: relative
+  width: fit-content
+  margin-right: 30px
+
+  img
+    width: 25px
+    position: absolute
+    left: -30px
+
+  select
+    width: fit-content
+    background: none
+    border: none
+    color: white
+    cursor: pointer
+    font-size: 16px
+
+  select:focus
+    outline: 0
+
+.swiper-container
+  @extend %content-w
+
+  .swiper-slide
+    text-align: center
+    width: fit-content !important
+    font-size: 18px
+    display: flex
+    align-items: start
+    background: none
+    overflow: hidden
+
+    .swiper-content
+      width: 58%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      margin: auto 0
+      padding: 60px 0
+
+      h1
+        text-align: start
+        font-size: 60px
+        color: white
+        display: -webkit-box
+        -webkit-line-clamp: 3
+        -webkit-box-orient: vertical
+        overflow: hidden
+
+      button
+        border: none
+        background: $orange-color
+        border-radius: 4px
+        padding: 10px 50px
+        margin-top: 30px
+        cursor: pointer
+        width: fit-content
+        white-space: nowrap
+
+    img
+      height: 100%
+      position: absolute
+      left: 50%
+      width: 50%
+      object-fit: contain
+      z-index: -1
+
+  .swiper-pagination
+    text-align: start
+
+  .swiper-pagination-bullet
+    background: white
+    opacity: 1
+
+  .swiper-pagination-bullet-active
+    background: $orange-color
+
+section .wrapper
+  @extend %content-w
+  margin: 0 auto
+
+.range-section, .form-section
+  margin-top: 20px
+  background: white
+  padding: 40px 0
+
+  h2
+    font-size: 30px
+    color: #888888
+
+  .range-section__content
+    width: 100%
+    margin-top: 30px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+    .range-section__slide-container
+      width: 29%
+      margin-right: 30px
+      --fill-color: $orange-color
+
+      p
+        font-family: 'Gilroy-Bold'
+        color: #98989d
+        position: relative
+        width: fit-content
+
+      p::after
+        content: '✸'
+        color: red
+        width: 3px
+        height: 3px
+        position: absolute
+        right: -10px
+        top: -4px
+
+      span
+        font-size: 35px
+
+      .range2
+        font-family: 'Gilroy-Bold'
+
+      .slider
+        -webkit-appearance: none
+        appearance: none
+        width: 100%
+        height: 5px
+        background: #d3d3d3
+        outline: none
+        opacity: 0.7
+        -webkit-transition: .2s
+        transition: opacity .2s
+        border-radius: 5px
+
+      .slider:hover
+        opacity: 1
+
+      .slider::-webkit-slider-thumb
+        -webkit-appearance: none
+        appearance: none
+        width: 25px
+        height: 25px
+        border-radius: 50px
+        background: $orange-color
+        cursor: pointer
+
+      .slider::-moz-range-thumb
+        width: 25px
+        height: 25px
+        background: #4CAF50
+        cursor: pointer
+
+    .range-section__range-sum
+      text-align: end
+      width: 32%
+
+      p
+        font-family: 'Gilroy-Bold'
+        color: #98989d
+
+      .range-sum
+        font-size: 35px
+        font-family: 'Gilroy-Bold'
+
+    .range-section__footer
+      width: 100%
+      margin-top: 20px
+      display: flex
+      justify-content: space-between
+
+      p
+        width: 60%
+        color: #525c69
+        position: relative
+
+      p::after
+        content: '✸'
+        color: red
+        width: 4px
+        height: 4px
+        position: absolute
+        left: -15px
+        top: 0
+
+      button
+        border: none
+        background: $orange-color
+        border-radius: 4px
+        width: fit-content
+        max-height: 60px
+        cursor: pointer
+        margin: auto 0 auto 20px
+        height: 50px
+        cursor: pointer
+        padding: 10px 40px
+        min-width: 30%
+        white-space: nowrap
+
+.form-section form
+  margin-top: 30px
+
+  input, select
+    padding: 0 15px
+    height: 50px
+    background: $form-input-background
+    border: none
+    margin-top: 30px
+
+    select
+      margin-top: 0
+
+  .form-top
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+    input
+      width: 28%
+
+    input::placeholder
+      color: #888888
+
+  .form-main
+    display: flex
+    justify-content: space-between
+
+    input
+      width: calc(100% - 30px)
+
+    textarea
+      padding: 15px
+      height: 100px
+      margin-top: 30px
+      background: $form-input-background
+      border: none
+      width: calc(100% - 30px) !important
+
+    .form-left, .form-right
+      display: flex
+      flex-direction: column
+      width: calc(50% - 15px)
+
+      .input-promp
+        display: flex
+
+        .promp-btn
+          @extend %promp-btn
+
+        .promp
+          display: none
+          width: 300px
+          background: #f9eeb8
+          padding: 5px
+          border: 1px solid #dfcb98
+          position: absolute
+          color: #525c69
+          font-size: 14px
+          font-family: Gilroy-Regular
+          line-height: 20px
+          z-index: 10
+          left: 53px
+          top: 0
+
+        .promp::before, .promp::after
+          content: ''
+          position: absolute
+          left: -20px
+          top: 15px
+          border: 10px solid transparent
+          border-right: 10px solid #dfcb98
+
+        .promp::after
+          border-right: 10px solid #f9eeb8
+          left: -19px
+
+        .promp-btn.mt-0
+          margin-top: 0
+          margin-left: 15px
+
+        .promp-btn.show
+          .promp
+            display: flex
+
+      select.mt-0
+        width: 100%
+        margin-top: 0
+
+      .input-promp.mt-30
+        background: $form-input-background
+        margin-top: 30px
+
+  .form-footer
+    display: flex
+
+    button
+      border: none
+      background: $orange-color
+      border-radius: 4px
+      width: 50%
+      cursor: pointer
+      margin: 30px 0 0 30px
+      height: 56px
+      cursor: pointer
+      padding: 10px 40px
+      white-space: nowrap
+
+    .input-file
+      width: 0.1px
+      height: 0.1px
+      opacity: 0
+      overflow: hidden
+      position: absolute
+      z-index: -1
+
+    .input-file + label
+      font-size: 16px
+      font-family: Gilroy-Bold
+      color: #888888
+      background-color: white
+      display: inline-block
+      border: 3px dotted #ececec
+      padding: 0 15px
+      height: 50px
+      width: calc(50% - 35px)
+      margin-top: 30px
+      cursor: pointer
+      display: flex
+      justify-content: center
+      line-height: 53px
+      white-space: nowrap
+
+
+      img
+        width: 15px
+        height: 15px
+        margin: auto 10px auto 0
+
+.mobile-menu-btn
+  display: none
+  cursor: pointer
+  margin: auto 0
+
+.bar1, .bar2, .bar3
+  width: 25px
+  height: 2px
+  background-color: white
+  margin: 6px 0
+  transition: 0.4s
+
+
+.change .bar1
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px)
+  transform: rotate(-45deg) translate(-6px, 0px)
+
+
+.change .bar2
+  opacity: 0
+
+.change .bar3
+  -webkit-transform: rotate(45deg) translate(-8px, -8px)
+  transform: rotate(45deg) translate(-11px, -6px)
+
+.mobile-menu
+  position: absolute !important
+  display: none
+  max-width: 0
+  transition: all 1s ease
+  background: black
+  padding: 0
+  right: 0
+  top: 71px
+  z-index: 10
+  overflow: hidden
+
+  .switch-lang
+    display: block
+    position: relative
+    top: 0
+    right: 0
+    width: calc(100% - 45px)
+    background: white
+    padding: 10px 5px 10px 40px
+    border-radius: 1px
+
+    img
+      left: 5px
+
+    select
+      width: 100%
+      color: black
+
+  .registration-form
+    justify-content: start
+
+    .sign-in
+      margin: 0 !important
+      border-bottom: 1px solid $grey-color
+      white-space: nowrap
+      width: 100%
+      position: relative
+      padding: 10px 10px 10px 30px
+
+    .sign-in::after
+      content: ''
+      background: #5f5f63
+      width: 14px
+      height: 14px
+      border-radius: 50px
+      position: absolute
+      left: 5px
+      top: 10px
+
+
+  .mobile-nav
+    flex-direction: column
+    margin: 15px 0 0 0
+    max-width: 0%
+    width: 100%
+    transition: max-width 1s ease
+
+    li
+      position: relative
+      padding: 0 30px
+
+    li::after
+      content: ''
+      background: #5f5f63
+      width: 14px
+      height: 14px
+      border-radius: 50px
+      position: absolute
+      left: 5px
+      top: 10px
+
+    li:hover, li.active
+      border-bottom: 1px solid $orange-color
+
+    a
+      line-height: 35px !important
+
+  .topmenu
+    flex-direction: column
+    order: 2
+    margin-right: 0
+
+    .submenu
+      position: relative
+      columns: 1
+      padding: 0
+      border-bottom: 0
+
+      li
+        border-bottom: none
+
+        a
+          border-bottom: none
+
+      li::after
+        display: none
+
+.mobile-menu.show
+  max-width: 100%
+  padding: 15px 10px 10px 10px
+
+  .mobile-nav
+    max-width: 100%
+
+@media screen and (max-width: 1779px)
+  .form-section form .form-main .form-left .input-promp .promp, .form-section form .form-main .form-right .input-promp .promp
+    left: -267px
+    top: 60px
+
+  .promp::after, .promp::before
+    border-bottom: 10px solid #dfcb98 !important
+    border-right: 10px solid #ff000000 !important
+    left: auto !important
+    top: -20px !important
+    right: 12px !important
+
+  .promp::after, .promp::after
+    border-right: 10px solid #ff000000 !important
+    border-bottom: 10px solid #f9eeb8 !important
+    top: -19px !important
+
+@media screen and (max-width: 979px)
+  .swiper-container
+    .swiper-slide
+      img
+        left: 40%
+        width: 65%
+
+      .swiper-content
+        h1
+          font-size: 40px
+
+  .header
+    flex-direction: column
+    height: fit-content
+    position: relative
+
+  .nav
+    order: 3
+    width: calc(100% - 60px)
+    margin: 0 auto
+
+  .switch-lang
+    position: absolute
+    top: 20px
+    right: 30px
+
+  .logo
+    width: 100px
+    justify-content: start
+    margin-top: 20px
+
+  .range-section__footer
+    button
+      max-height: 50px
+      padding: 20px
+      margin: auto 0
+
+  .registration-form
+    .sign-in
+      margin: 0 auto
+
+  .range-section .range-section__content .range-section__range-sum
+    text-align: center
+    width: 100%
+    margin-top: 30px
+    margin-bottom: 50px
+
+  .range-section .range-section__content .range-section__slide-container
+    width: 40%
+
+  .form-section form .form-top
+    flex-direction: column
+
+    input
+      width: calc(100% - 30px)
+
+@media screen and (max-width: 767px)
+  .nav
+    display: none
+
+  .logo
+    margin: auto 0
+
+  .switch-lang
+    display: none
+
+  .header
+    padding: 20px
+    flex-direction: row
+
+  .mobile-menu-btn
+    display: inline-block
+
+  .mobile-menu
+    display: block
+
+    .mobile-nav
+      display: flex
+
+  .form-section form .form-main
+    flex-direction: column
+
+    .form-left, .form-right
+      width: 100%
+
+@media screen and (max-width: 479px)
+  .swiper-container .swiper-slide .swiper-content
+    h1
+      font-size: 20px
+
+  .range-section .range-section__content .range-section__footer
+    flex-wrap: wrap
+
+    p
+      width: 100%
+
+    button
+      width: 100%
+      margin: 30px 0
+
+  .range-section .range-section__content .range-section__range-sum
+    text-align: start
+
+  .range-section .range-section__content .range-section__slide-container
+    width: 100%
+    margin-top: 20px
+
+  .form-section form .form-footer
+    flex-direction: column
+
+    .input-file+label
+      width: calc(100% - 30px)
+
+    button
+      margin: 20px 0
+      width: 100%
+
+

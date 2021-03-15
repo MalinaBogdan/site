@@ -1,0 +1,28 @@
+@import primary
+
+%vertical-center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin: auto 0
+
+%content-w
+  max-width: 1000px
+  width: 70%
+
+%promp-btn
+  height: 50px
+  width: 50px
+  margin-top: 30px
+  text-align: center
+  line-height: 50px
+  color: #007ff2
+  font-family: 'Gilroy-Bold'
+  background: $form-input-background
+  border-left: 1px solid #ececec
+  font-size: 20px
+  position: relative
+
+@media screen and (max-width: 767px)
+  %content-w
+    width: calc(100% - 60px)

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link rel="stylesheet" href="style/style.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="./images/logo.svg" alt="">
+        <nav class="nav">
+            <ul class="topmenu">
+                <li class="active"><a href="#">Home</a>
+                    <ul class="submenu">
+                        <span>Submenu 01</span>
+                        <li><a href="#">Excepteur cint</a></li>
+                        <li><a href="#">Occaecat cupidatat</a></li>
+                        <span>Submenu 02</span>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Our news</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Our news</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Faq</a></li>
+            </ul>
+            <form class="registration-form">
+                <button class="sign-in">Sign in</button>
+                <button class="registration">Registration</button>
+            </form>
+        </nav>
+        <div class="switch-lang">
+            <img src="images/lang-icon.png" alt="">
+            <select>
+                <option value="0">English</option>
+                <option value="1">Russian</option>
+                <option value="2">Ukraine</option>
+                <option value="3">Spanish</option>
+            </select>
+        </div>
+        <div class="mobile-menu-btn" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="mobile-menu">
+            <div class="switch-lang">
+                <img src="images/lang-icon.png" alt="">
+                <select>
+                    <option value="0">English</option>
+                    <option value="1">Russian</option>
+                    <option value="2">Ukraine</option>
+                    <option value="3">Spanish</option>
+                </select>
+            </div>
+            <nav class="nav mobile-nav">
+                <ul class="topmenu">
+                    <li class="active"><a href="#">HOME</a>
+                        <ul class="submenu">
+                            <span>Submenu 01</span>
+                            <li><a href="#">Excepteur cint</a></li>
+                            <li><a href="#">Occaecat cupidatat</a></li>
+                            <span>Submenu 02</span>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our news</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Our news</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Faq</a></li>
+                </ul>
+                <form class="registration-form">
+                    <button class="sign-in">LOG IN</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <section class="slider-section">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <h1> Sed ut perpiciat unde omin iste natus error 5000 </h1>
+                        <button>Learn now!</button>
+                    </div>
+                    <img src="images/slider-01.png" alt="">
+                </div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="range-section">
+        <div class="wrapper">
+            <h2>Voluptatem points doluptas sit </br>Asperantur aut 2000 </h2>
+            <div class="range-section__content">
+                <div class="range-section__slide-container">
+                    <p>Value 01</p>
+                    <span class="range1">0</span>
+                    <input type="range" min="0" max="1000" value="0" class="slider" id="range1" oninput="showVal(this.value)">
+                </div>
+                <div class="range-section__slide-container">
+                    <p>Value 02</p>
+                    <span class="range2">0</span>
+                    <input type="range" min="0" max="3000" value="0" class="slider" id="range2" oninput="showVal2(this.value)">
+                </div>
+                <div class="range-section__range-sum">
+                    <p>Value 03</p>
+                    <span class="range-sum">0 Points</span>
+                </div>
+                <div class="range-section__footer">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eius in iusto provident recusandae soluta. Alias, at
+                        consectetur dignissimos dolore eligendi, expedita illum
+                        ipsam maxime non, quae quo saepe totam velit
+                    </p>
+                    <button>See more values</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Форма сырая, так как не вкладывался во время -->
+    <section class="form-section">
+        <div class="wrapper">
+            <h2>Excepteur sint cupidatat non proident?</h2>
+            <form action="">
+                <div class="form-top">
+                    <input type="text" id="name" placeholder="First Name">
+                    <input type="text" id="surname" placeholder="Last Name">
+                    <input type="email" id="email" placeholder="Email Address">
+                </div>
+                <div class="form-main">
+                    <div class="form-left">
+                        <div class="input-promp">
+                            <input type="number" name="number" id="number" placeholder="+380">
+                            <div class= "promp-btn" onclick="showPromp(this)">
+                                i
+                                <div class="promp">Lorem ipsum sit amet, consectetur adipising elitaliqua.</div>
+                            </div>
+                        </div>
+                        <div class="input-promp">
+                            <input type="text" id="zipcode" placeholder="Zipcode">
+                            <div class= "promp-btn" onclick="showPromp(this)">
+                                i
+                                <div class="promp">Lorem ipsum sit amet, consectetur adipising elitaliqua.</div>
+                            </div>
+                        </div>
+                        <div class="input-promp mt-30">
+                            <select class="mt-0" required>
+                                <option value="" selected>Country</option>
+                                <option value="country-1">Ukraine</option>
+                                <option value="country-2">Russia</option>
+                                <option value="country-3">USA</option>
+                                <option value="country-4">Poland</option>
+                                <option value="country-5">German</option>
+                            </select>
+                            <div class= "promp-btn mt-0" onclick="showPromp(this)">
+                                i
+                                <div class="promp">Lorem ipsum sit amet, consectetur adipising elitaliqua.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-right">
+                        <div class="input-promp">
+                            <input type="date" placeholder="qwert">
+                            <div class= "promp-btn" onclick="showPromp(this)">
+                                i
+                                <div class="promp">Lorem ipsum sit amet, consectetur adipising elitaliqua.</div>
+                            </div>
+                        </div>
+                        <textarea placeholder="Your message"></textarea>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <input type="file" name="file" id="file" class="input-file" />
+                    <label for="file">
+                        <img src="images/attach-file-icon.svg" alt="">
+                        Attach your file
+                    </label>
+                    <button>Sent</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="script/range-input.js"></script>
+    <script src="script/mobile-menu.js"></script>
+    <script src="script/promp.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script type="module">
+        const swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
